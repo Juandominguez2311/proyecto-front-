@@ -27,7 +27,7 @@
                     </div>
                     <div class="shop-body">
                         <h3>Laptops<br></h3>
-                        <a href="http://localhost:4200/productos/laptops" value="2" class="cta-btn">Comprar ahora <i class="fa fa-arrow-circle-right"></i></a>
+                        <a [routerLink]='["/productos/laptops"]' onclick=" getByCategoryHome(option.value)" value="2" class="cta-btn">Comprar ahora <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="shop-body">
                         <h3>Celulares<br></h3>
-                        <a href="http://localhost:4200/productos/celulares" value="3" class="cta-btn">Comprar ahora <i class="fa fa-arrow-circle-right"></i></a>
+                        <a [routerLink]='["/productos/celulares"]' onclick=" getByCategoryHome(option.value)" value="3" class="cta-btn">Comprar ahora <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
