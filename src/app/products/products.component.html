@@ -1,0 +1,52 @@
+<div class body>
+    <!-- SEARCH BAR -->
+    <div class="col-md-6">
+        <div class="header-search">
+            <form>
+                <select [routerLink]='["/productos"]' class="input-select" (click)="getByCategory(option.value)" #option>
+          <option  value="0">Categorias</option>
+          <option [routerLink]='["/productos/tvs"]' value="1">Televisores</option>
+          <option [routerLink]='["/productos/laptops"]' value="2">Laptops</option>
+          <option [routerLink]='["/productos/celulares"]' value="3">Celulares</option>
+          </select>
+                <input class="input" placeholder="Busque el producto" [(ngModel)]="campobuscado" name="campobuscado">
+                <button class="search-btn" (click)="serchByName(campobuscado)">Buscar</button>
+            </form>
+        </div>
+    </div>
+    <!-- /SEARCH BAR -->
+
+
+    <div class="col-md-12" class="global">
+        <div class="row">
+            <div class="col-md-4 col-sm-3" *ngFor="let p of ProductList">
+                <div class="card my-2">
+                    <img [src]="p.image" alt="{{p.name}}" width=auto height=auto class="card-img-top" [routerLink]='["/productos-cards/" + p.product_id]' style="cursor:pointer;">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <p>{{p.name | titlecase}}</p>
+
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <p class="lead">{{p.price | currency:'USD'}}</p>
+                    </div>
+                    <div value="p.sku"></div>
+
+                    <div>
+                        <div>
+                            <form action="/procesar-pago" method="POST">
+                                <button type="button" [routerLink]='["/productos-cards/" + p.product_id]' class="mercadopago-button btn-sm btn-block" id="mercadopago-button" [class.disabled]="p.quantity < 1" [class.btn-outline-danger]="p.quantity < 1" (click)="addToCart(product?.id)"
+                                    [disabled]="p.quantity < 1">
+                                    {{ p.quantity < 1 ? "NO STOCK" : "Ver Producto"}}
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>

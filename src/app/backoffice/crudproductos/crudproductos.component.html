@@ -1,0 +1,34 @@
+<p *ngIf="ProductList">Listado de Productos</p>
+<p *ngIf="!(ProductList)">No hay Productos cargados</p>
+<div class="row">
+    <input class="form-control" [(ngModel)]="campobuscado" name="campobuscado">
+    <button class="search-btn btn-danger" (click)="serchByName(campobuscado)">Buscar</button>
+    <button class="btn btn-primary" [routerLink]='["/producto-nuevo/"]'>Crear</button>
+    <button class="btn btn-warning" (click)="CargarListado() ">Mostrar todos </button>
+</div>
+<table class="table table-stripe">
+    <thead class="thead-dark">
+        <tr>
+            <th>SKU </th>
+            <th>NOMBRE </th>
+            <th>Categoria </th>
+            <th>Cantidad de productos </th>
+            <th>Precio </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tr *ngFor="let product of ProductList">
+        <td>{{product.sku}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.quantity}}</td>
+        <td>{{product.price}}</td>
+        <td>
+            <button class="btn btn-danger" (click)="deleteProduct(product.product_id)">Borrar</button>
+        </td>
+        <td>
+            <button class="btn btn-primary" [routerLink]='["/producto-editar/" + product.product_id]'>Editar</button>
+        </td>
+    </tr>
+</table>

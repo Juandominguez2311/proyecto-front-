@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron text-center">
+                <h1 class="display-3">Muchas Gracias por su Compra!</h1>
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of cart">
+                        <td>
+                            <img [src]="p.image" alt="{{p.title}}" class="img-thumbnail" width="100px">
+                        </td>
+                        <td>{{p.name}}</td>
+                        <td>{{p.price | currency:'USD'}}</td>
+                        <td>{{p.quantity}}</td>
+                    </tr>
+
+                    <tr class="border-0">
+                        <td style="border: none;"></td>
+                        <td></td>
+                        <td>TOTAL</td>
+                        <td>{{total | currency:'USD'}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

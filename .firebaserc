@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "proyecto-integrador-98add": {
+      "hosting": {
+        "ProyectoFinalFront": [
+          "proyecto-integrador-98add"
+        ]
+      }
+    }
+  }
+}
