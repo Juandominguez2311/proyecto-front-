@@ -8,7 +8,6 @@ if (click) {
 
         $('mercadopago-button').attr("disabled", true);
         const items = JSON.parse(localStorage.getItem('Cart'))
-
         const orderData = {
 
             items
@@ -33,7 +32,7 @@ if (click) {
             })
             .then(function(preference) {
                 createCheckoutButton(preference.id);
-
+                localStorage.clear()
             })
             .catch(function() {
                 alert("Unexpected error");

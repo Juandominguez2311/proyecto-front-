@@ -8,8 +8,6 @@ if (click) {
 
         $('mercadopago-button').attr("disabled", true);
         const items = localStorage.getItem('Compra')
-        const total = Number(localStorage.getItem('total'))
-        items.unit_price = total
         const orderData = {
 
             items
@@ -34,7 +32,7 @@ if (click) {
             })
             .then(function(preference) {
                 createCheckoutButton(preference.id);
-
+                localStorage.clear()
             })
             .catch(function() {
                 alert("Unexpected error");
