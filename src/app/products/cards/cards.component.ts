@@ -53,7 +53,7 @@ export class CardsComponent implements OnInit {
       });
   
     })
-    this.buySingleProduct()
+    //this.buySingleProduct()
   }
   
   addToCart(){
