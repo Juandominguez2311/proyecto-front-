@@ -31,7 +31,7 @@ export class CardsComponent implements OnInit {
     private cartService : CartService,
      ) {
 
-       cargarService.Cargar(['mercadopagojsSingleproduct'])
+       //cargarService.Cargar(['mercadopagojsSingleproduct'])
       }
 
     searchKey:string = "";
@@ -52,10 +52,7 @@ export class CardsComponent implements OnInit {
         this.preference = prod;
       });
     })
-<<<<<<< HEAD
-=======
     //this.buySingleProduct()
->>>>>>> 1dcae0495ab5ecdfe97010a3e434e250ac0d6396
   }
   
   addToCart(){
@@ -108,7 +105,6 @@ export class CardsComponent implements OnInit {
         this.cartService.updateCartItemCount(cart.length);
         this.cartService.updateShoppingCart(cart);
         localStorage.setItem('Cart', JSON.stringify(cart));
-        console.log(localStorage.getItem('Cart'))
       })
   }
 }
