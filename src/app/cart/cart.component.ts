@@ -65,7 +65,6 @@ export class CartComponent implements OnInit {
       this.total += (element.price*element.quantity);
       localStorage.setItem('total',this.total.toString())
     })
-     window.location.reload();
   }
   deleteMethod(productId:number) {
     if(confirm("Esta seguro de sacar el producto? ")) {
