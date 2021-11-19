@@ -56,8 +56,18 @@ export class CartComponent implements OnInit {
         }
       });
     }
+    //Agregue esto
+    this.cart.forEach((element, index) => {
+    this.productService.getSingleProduct(element.product_id)
+      .subscribe(p => {
+        
+        this.cart[index].quantity = element.quantity
+      })})
+    
+    //HASTA ACA 
     this.getTotal();
   }
+  
 
   getTotal(){
    
