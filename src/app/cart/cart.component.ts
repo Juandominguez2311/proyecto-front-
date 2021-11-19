@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {CartModel} from "../models/cart";
 import { CargarMercadopagoService} from "../services/cargar-mercadopago.service"
 import { getLocaleDayNames } from '@angular/common';
+import { ProductsService } from '../services/products.service';
 
 
 
@@ -18,7 +19,7 @@ export class CartComponent implements OnInit {
   items : any[]
   cart: CartModel[] = [];
   total: number = 0;
-  constructor(public cartService: CartService , private cargarService: CargarMercadopagoService) {cargarService.Cargar(['mercadopagojs'])
+  constructor(public cartService: CartService , private cargarService: CargarMercadopagoService, private productService : ProductsService) {cargarService.Cargar(['mercadopagojs'])
   }
 
   ngOnInit() {
