@@ -37,7 +37,7 @@
             <p class="product-sku" style="visibility: hidden;" id="sku">SKU: {{product?.sku}}</p>
             <input type="number" id="quantity" [value]="1" style="visibility: hidden;">
 
-            <button *ngIf="product?.quantity>= 1" type="button" class="mercadopago-button btn-sm btn-block" [routerLink]='["/comprar-producto"]'>COMPRAR
+            <button *ngIf="product?.quantity>= 1" (click)="buySingleProduct()" type="button" class="mercadopago-button btn-sm btn-block" [routerLink]='["/cart"]'>COMPRAR
                 </button>
             <button (click)="addToCart(product?.id)" *ngIf="product?.quantity >= 1" class="btn-danger btn-sm btn-block"><i
                 class="fa fa-shopping-cart"></i>Agregar al carrito

@@ -3,7 +3,7 @@ import {CartService} from "../../services/cart.service";
 import {Observable} from "rxjs";
 import {CartModel} from "../../models/cart";
 import { CargarMercadopagoService} from "../../services/cargar-mercadopago.service"
-import { getLocaleDayNames } from '@angular/common';
+import { getLocaleDayNames, getLocaleMonthNames } from '@angular/common';
 
 @Component({
   selector: 'app-success',
@@ -20,21 +20,6 @@ export class SuccessComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.cartService.cart.subscribe(a => this.cart = a);
-    this.getTotal();
-    console.log(localStorage.getItem('Cart'))
+    localStorage.clear()
   }
-
-  getCartProductItems(){
-    this.cart = JSON.parse(localStorage.getItem('Cart'));
-    if(this.cart.length <=0){
-      this.cart = JSON.parse(localStorage.getItem('Compra'))
-    }
-    this.items = this.cart
-  }
-
-  getTotal(){
-    this.total = parseInt(localStorage.getItem('total'))
-  }
-
 }

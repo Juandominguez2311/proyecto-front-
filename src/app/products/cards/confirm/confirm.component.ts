@@ -24,17 +24,16 @@ names : string[]
  
     this.cartService.cart.subscribe(a => this.cart = a);
     this.getTotal();
-    console.log(localStorage.getItem('Compra'))
   }
 
   getCartProductItems(){
-    this.cart = JSON.parse(localStorage.getItem('Compra'));
+    this.cart = JSON.parse(localStorage.getItem('Cart'));
     this.items = this.cart
   }
 
   onRemoveProductsFromCart(productId: number){
     this.cart = this.cart.filter(a => a.product_id != productId);
-    localStorage.setItem('Compra', JSON.stringify(this.cart));
+    localStorage.setItem('Cart', JSON.stringify(this.cart));
     this.cartService.updateCartItemCount(this.cart.length);
     this.cartService.updateShoppingCart(this.cart);
     this.total = 0;

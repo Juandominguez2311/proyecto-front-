@@ -32,7 +32,6 @@ if (click) {
             })
             .then(function(preference) {
                 createCheckoutButton(preference.id);
-                localStorage.clear()
             })
             .catch(function() {
                 alert("Unexpected error");

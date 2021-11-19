@@ -51,9 +51,7 @@ export class CardsComponent implements OnInit {
         this.product = prod;
         this.preference = prod;
       });
-  
     })
-    this.buySingleProduct()
   }
   
   addToCart(){
