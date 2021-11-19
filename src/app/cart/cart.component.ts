@@ -48,6 +48,7 @@ export class CartComponent implements OnInit {
       this.cart.forEach((element, index) => {
         if(element.product_id == productId){
           this.cart[index].quantity = element.quantity + 1;
+          localStorage.setItem('Cart', JSON.stringify(this.cart));
         }
       });
     } else {
@@ -57,18 +58,17 @@ export class CartComponent implements OnInit {
         }
       });
     }
-    //Agregue esto
+    //cambie de aca 
     this.cart.forEach((element, index) => {
     this.productService.getSingleProduct(element.product_id)
       .subscribe(p => {
         
         this.cart[index].quantity = element.quantity
       })})
-    
-    //HASTA ACA 
+//hasta aca
     this.getTotal();
   }
-  
+
 
   getTotal(){
    
