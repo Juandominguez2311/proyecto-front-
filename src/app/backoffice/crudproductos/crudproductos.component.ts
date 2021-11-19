@@ -54,7 +54,11 @@ export class CrudproductosComponent implements OnInit {
       this.CargarListado()
     }
   }
-
+  deleteMethod(productId:number) {
+    if(confirm("Esta seguro de eliminar el producto? ")) {
+      this.deleteProduct(productId);
+    }
+  }
   refresh(){
     window.location.reload()
   }

@@ -26,7 +26,7 @@
         <td>{{product.quantity}}</td>
         <td>{{product.price}}</td>
         <td>
-            <button class="btn btn-danger" (click)="deleteProduct(product.product_id)">Borrar</button>
+            <button class="btn btn-danger" (click)="deleteMethod(product.product_id)">Borrar</button>
         </td>
         <td>
             <button class="btn btn-primary" [routerLink]='["/producto-editar/" + product.product_id]'>Editar</button>
