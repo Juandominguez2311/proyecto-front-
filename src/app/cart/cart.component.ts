@@ -81,7 +81,7 @@ export class CartComponent implements OnInit {
     })
   }
   deleteMethod(productId:number) {
-    if(confirm("Esta seguro de sacar el producto? ")) {
+    if(confirm("Esta seguro de eliminar el producto? ")) {
       this.onRemoveProductsFromCart(productId);
     }
   }

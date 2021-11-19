@@ -2,10 +2,10 @@
 <p *ngIf="!(ProductList)">No hay Productos cargados</p>
 <div class="row">
     <input class="form-control" [(ngModel)]="campobuscado" name="campobuscado">
-    <button class="search-btn btn-danger" (click)="serchByName(campobuscado)">Buscar</button>
-    <button class="btn btn-primary" [routerLink]='["/producto-nuevo/"]'>Crear</button>
-    <button class="btn btn-warning" (click)="CargarListado() ">Mostrar todos </button>
-    <button class="btn btn-info" (click)="refresh()"><i class="fa fa-refresh" aria-hidden="true"></i> Refrescar</button>
+    <button style="margin-left:1px; margin-right: 1px;" class="search-btn btn-danger" (click)="serchByName(campobuscado)">Buscar</button>
+    <button style="margin-left:1px; margin-right: 1px;" class="btn btn-primary" [routerLink]='["/producto-nuevo/"]'>Crear</button>
+    <button style="margin-left:1px; margin-right: 1px;" class="btn btn-warning" (click)="CargarListado() ">Mostrar todos </button>
+    <button style="margin-left:1px; margin-right: 1px;" class="btn btn-info" (click)="refresh()"><i class="fa fa-refresh" aria-hidden="true"></i> Refrescar</button>
 </div>
 <table class="table table-stripe">
     <thead class="thead-dark">
