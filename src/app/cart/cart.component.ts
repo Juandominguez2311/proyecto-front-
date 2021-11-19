@@ -64,7 +64,10 @@ export class CartComponent implements OnInit {
       .subscribe(p => {
         
         this.cart[index].quantity = element.quantity
-      })})
+      })
+      console.log(this.cart)
+    })
+    
 //hasta aca
     this.getTotal();
   }
