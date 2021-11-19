@@ -54,4 +54,8 @@ export class CrudproductosComponent implements OnInit {
       this.CargarListado()
     }
   }
+
+  refresh(){
+    window.location.reload()
+  }
 }
